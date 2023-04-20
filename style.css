@@ -1,5 +1,11 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem auto;
+    justify-content: center;
+}
 section {
-    width: 0px;
+    width: 300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     
@@ -9,6 +15,12 @@ article {
     border: 1px dashed black;
     height: 100px;
     width: 100px;
+}
+
+#announcement {
+    border: 1px dashed black;
+    height: 50px;
+    width: 300px;
 }
 
 .player1 {
