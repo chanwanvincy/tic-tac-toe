@@ -9,9 +9,9 @@ var box7 = document.querySelector('#box7')
 var box8 = document.querySelector('#box8')
 var box9 = document.querySelector('#box9')
 var announce = document.querySelector('#announcement')
-
 var counter = 0
 
+// players choosing squares
 function player1 () {
     var clicked = event.target
     clicked.classList.add('player1')
@@ -24,6 +24,7 @@ function player2 () {
     counter +=1
 }
 
+// announcement of results
 function player1Wins () {
     announce.textContent = 'player1 wins'
 }
@@ -32,6 +33,11 @@ function player2Wins () {
     announce.textContent = 'player2 wins'
 }
 
+function draw () {
+    announce.textContent = "it's a draw"
+}
+
+// if winning combinations are triggered, who is the winner
 function whoWins1 () {
     if (box1.className === 'player1') {
         player1Wins ()  
@@ -74,6 +80,11 @@ function whoWins7 () {
 
 boxes.addEventListener('click', function (event) {
     var clicked = event.target
+//it's a draw
+    for (b = 0; b < boxes.childElementCount; b++) {
+        if (announce.textContent === '' && boxes.children[b].className !== '') {
+        }
+    }
     
     if (announce.textContent !== '') {
         return
@@ -87,36 +98,52 @@ boxes.addEventListener('click', function (event) {
         }
     }
 
-     // (wonder if it's possible to store the scenarios into an array? if not will store them in a function)
-    if (box1.className === box2.className && box2.className === box3.className) {
-        whoWins1 ()
-    } else if (box1.className === box4.className && box4.className === box7.className) {
-        whoWins1 ()
-    } else if (box1.className === box5.className && box5.className === box9.className) {
-        whoWins1 ()
-    } else if (box2.className === box5.className && box5.className === box8.className) {
-        whoWins2 ()
-    } else if (box3.className === box6.className && box6.className === box9.className) {
-        whoWins3 ()
-    } else if (box3.className === box5.className && box5.className === box7.className) {
-        whoWins3 () 
-    } else if (box4.className === box5.className && box5.className === box6.className) {
-        whoWins4 ()
-    } else if (box7.className === box7.className && box8.className === box9.className) {
-        whoWins7 ()
+    var winScenarios = [
+        (box1.className === box2.className && box2.className === box3.className),
+        (box1.className === box4.className && box4.className === box7.className),
+        (box1.className === box5.className && box5.className === box9.className),
+        (box2.className === box5.className && box5.className === box8.className),
+        (box3.className === box6.className && box6.className === box9.className),
+        (box3.className === box5.className && box5.className === box7.className),
+        (box4.className === box5.className && box5.className === box6.className),
+        (box7.className === box7.className && box8.className === box9.className)
+    ]
+
+    for (w = 0; w < winScenarios.length; w++) {
+        if (winScenarios[0] === true || winScenarios[1] === true || winScenarios[2] === true) {
+            whoWins1 ()
+        } else if (winScenarios[3] === true) {
+            whoWins2 ()
+        } else if (winScenarios[4] === true || winScenarios[5] === true) {
+            whoWins3 ()
+        } else if (winScenarios[6] === true) {
+            whoWins4 ()
+        } else if (winScenarios[7] === true) {
+            whoWins7 ()
+        }
     }
+
+     // (wonder if it's possible to store the scenarios into an array? if not will store them in a function)
+    // if (box1.className === box2.className && box2.className === box3.className) {
+    //     whoWins1 ()
+    // } else if (box1.className === box4.className && box4.className === box7.className) {
+    //     whoWins1 ()
+    // } else if (box1.className === box5.className && box5.className === box9.className) {
+    //     whoWins1 ()
+    // } else if (box2.className === box5.className && box5.className === box8.className) {
+    //     whoWins2 ()
+    // } else if (box3.className === box6.className && box6.className === box9.className) {
+    //     whoWins3 ()
+    // } else if (box3.className === box5.className && box5.className === box7.className) {
+    //     whoWins3 () 
+    // } else if (box4.className === box5.className && box5.className === box6.className) {
+    //     whoWins4 ()
+    // } else if (box7.className === box7.className && box8.className === box9.className) {
+    //     whoWins7 ()
+    // }
 
 })
 
-var winScenarios = [
-    (box1.className === box2.className && box2.className === box3.className),
-    (box1.className === box4.className && box4.className === box7.className),
-    (box1.className === box5.className && box5.className === box9.className),
-    (box2.className === box5.className && box5.className === box8.className),
-    (box3.className === box6.className && box6.className === box9.className),
-    (box3.className === box5.className && box5.className === box7.className),
-    (box4.className === box5.className && box5.className === box6.className),
-    (box7.className === box7.className && box8.className === box9.className)
-]
+
         // console.log("it's a draw")
     // if none of these conditions are fulfilled it's a draw
