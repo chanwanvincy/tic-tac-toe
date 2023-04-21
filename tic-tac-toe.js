@@ -68,11 +68,6 @@ function whoWins7 () {
 
 boxes.addEventListener('click', function (event) {
     var clicked = event.target
-//it's a draw - can I wrap it outside of event listener as while loop??
-    // for (b = 0; b < boxes.childElementCount; b++) {
-    //     if (announce.textContent === '' && boxes.children[b].className !== '') {
-    //     }
-    // }
     
     if (announce.textContent !== '') {
         return
@@ -89,10 +84,7 @@ boxes.addEventListener('click', function (event) {
             counter +=1
         }
     }
-    if (announce.textContent === '' && boxes.children[0].className !== '' && boxes.children[1].className !== '' && boxes.children[2].className !== '' && boxes.children[3].className !== '' && boxes.children[4].className !== '' && boxes.children[5].className !== '' && boxes.children[6].className !== '' && boxes.children[7].className !== '' && boxes.children[8].className !== '') {
-        draw ()
-    }
-    
+
     var winScenarios = [
         (box1.className !== '' && box1.className === box2.className && box2.className === box3.className),
         (box1.className !== '' && box1.className === box4.className && box4.className === box7.className),
@@ -114,13 +106,7 @@ boxes.addEventListener('click', function (event) {
         whoWins4 ()
     } else if (winScenarios[7] === true) {
         whoWins7 ()
+    } else if (counter === 9) {
+        draw ()
     }
 })
-
-
-
-
-
-
-        // console.log("it's a draw")
-    // if none of these conditions are fulfilled it's a draw
