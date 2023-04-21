@@ -10,6 +10,20 @@
 </head>
 <body>
     <h1 class = "neonText">Tic Tac Toe</h1>
+    <section id="counters">
+        <article id = "p1-wins">
+            <h4>p1 wins</h4>
+            <h2>0</h2>
+        </article>
+        <article id = "p2-wins">
+            <h4>p2 wins</h4>
+            <h2>0</h2>
+        </article>
+        <article id = "ties">
+            <h4>ties</h4>
+            <h2>0</h2>
+        </article>
+    </section>
     <section id="boxes">
         <article id="box1"></article>
         <article id="box2"></article>
@@ -23,6 +37,10 @@
         <!-- <button type="button" class="btn btn-success">Refresh</button> -->
     </section>
     <section id="announcement"></section>
+    <section id="buttonsContainer">
+        <button id="newGameBtn">new game</button>
+        <button id="startOverBtn">start-over</button>
+    </section>
 
 </body>
 <script src="./tic-tac-toe.js"></script>

@@ -10,25 +10,33 @@ var box8 = document.querySelector('#box8')
 var box9 = document.querySelector('#box9')
 var announce = document.querySelector('#announcement')
 var counter = 0
+var p1WinDisplay = document.querySelector('#p1-wins h2')
+var p2WinDisplay = document.querySelector('#p2-wins h2')
+var tiesDisplay = document.querySelector('#ties h2')
 var p1WinCount = 0
 var p2WinCount = 0
-var drawCount = 0
+var tieCount = 0
+var newGameBtn = document.querySelector('#newGameBtn')
+var startOverBtn = document.querySelector('#startOverBtn')
 
 
 // announcement of results 
 function player1Wins () {
     announce.textContent = 'Player 1 wins!'
     p1WinCount += 1
+    p1WinDisplay.textContent = p1WinCount
 }
 
 function player2Wins () {
     announce.textContent = 'Player 2 wins!'
-    p1WinCount += 1
+    p2WinCount += 1
+    p2WinDisplay.textContent = p2WinCount
 }
 
 function draw () {
     announce.textContent = "it's a draw"
-    drawCount += 1
+    tieCount += 1
+    tiesDisplay.textContent = tieCount
 }
 
 // if winning combinations are triggered, who is the winner
@@ -115,4 +123,26 @@ boxes.addEventListener('click', function (event) {
     } else if (counter === 9) {
         draw ()
     }
+})
+
+newGameBtn.addEventListener('click', function () {
+    for (n = 0; n < boxes.childElementCount; n++) {
+        boxes.children[n].className = ""
+        counter = 0
+    }
+    announce.textContent = ''
+})
+
+startOverBtn.addEventListener('click', function (){
+    for (n = 0; n < boxes.childElementCount; n++) {
+        boxes.children[n].className = ""
+        counter = 0
+    }
+    p1WinCount = 0
+    p2WinCount = 0
+    tieCount = 0
+    p1WinDisplay.textContent = p1WinCount
+    p2WinDisplay.textContent = p2WinCount
+    tiesDisplay.textContent = tieCount
+    announce.textContent = ''
 })
