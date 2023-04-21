@@ -10,19 +10,25 @@ var box8 = document.querySelector('#box8')
 var box9 = document.querySelector('#box9')
 var announce = document.querySelector('#announcement')
 var counter = 0
+var p1WinCount = 0
+var p2WinCount = 0
+var drawCount = 0
 
 
 // announcement of results 
 function player1Wins () {
-    announce.textContent = 'player1 wins'
+    announce.textContent = 'Player 1 wins!'
+    p1WinCount += 1
 }
 
 function player2Wins () {
-    announce.textContent = 'player2 wins'
+    announce.textContent = 'Player 2 wins!'
+    p1WinCount += 1
 }
 
 function draw () {
     announce.textContent = "it's a draw"
+    drawCount += 1
 }
 
 // if winning combinations are triggered, who is the winner
@@ -73,7 +79,7 @@ boxes.addEventListener('click', function (event) {
         return
     }
     
-    if (clicked.className === '') {
+    if (clicked.className === '' && clicked.tagName === 'ARTICLE') {
         if (counter % 2 == 0) {
             var clicked = event.target
             clicked.classList.add('player1')

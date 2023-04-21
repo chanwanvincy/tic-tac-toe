@@ -1,32 +1,53 @@
-body {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 2rem auto;
-    justify-content: center;
-}
-section {
-    width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+* {
+    background-color: rgb(238, 233, 229);
 }
 
+h1 {
+    margin: 50px auto;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #267e65;
+    text-align: center;
+}
+
+section {
+    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+} 
+
 article {
-    border: 1px dashed black;
+    background-color: rgb(247, 246, 245);
+    border: 1px dashed #955c36;
     height: 100px;
     width: 100px;
+    padding: 5px;
 }
 
 #announcement {
-    border: 1px dashed black;
-    height: 50px;
-    width: 300px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* border: 1px dashed black; */
+    margin: 20px auto;
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
 }
 
 .player1 {
-    background-color: lightcoral;
+    background-image: url("1.png");
+    background-size: cover;
 }
 
 .player2 {
-    background-color: midnightblue;
+    background-image: url("2.png");
+    background-size: cover;
 }
