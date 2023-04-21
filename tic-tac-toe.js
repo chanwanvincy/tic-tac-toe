@@ -22,19 +22,22 @@ var startOverBtn = document.querySelector('#startOverBtn')
 
 // announcement of results 
 function player1Wins () {
-    announce.textContent = 'Player 1 wins!'
+    announce.style.color ='#1a3a73'
+    announce.textContent = 'player 1 wins!'
     p1WinCount += 1
     p1WinDisplay.textContent = p1WinCount
 }
 
 function player2Wins () {
-    announce.textContent = 'Player 2 wins!'
+    announce.style.color ='#955c36'
+    announce.textContent = 'player 2 wins!'
     p2WinCount += 1
     p2WinDisplay.textContent = p2WinCount
 }
 
 function draw () {
-    announce.textContent = "it's a draw"
+    announce.style.color ='#267e65'
+    announce.textContent = "it's a draw."
     tieCount += 1
     tiesDisplay.textContent = tieCount
 }
@@ -92,6 +95,7 @@ boxes.addEventListener('click', function (event) {
             var clicked = event.target
             clicked.classList.add('player1')
             counter +=1
+
         } else {
             var clicked = event.target
             clicked.classList.add('player2')

@@ -28,10 +28,13 @@ You can play the game at https://chanwanvincy.github.io/tic-tac-toe/
 
 I wanted to build not only a functional game but also one that is pleasing to look at. The palette of the game was pulled from the image above of a Japanese gilded screen I found on [this site](https://smithhonig.com/blogs/blog/color-palettes-inspired-by-japan-japanese-color-palettes). 
 
-Instead of using the traditional noughts and exes, I opted for a patterned circle and a flower symbol asset from Canva so the visual language is cohesive.
+Instead of using the traditional noughts and exes, I opted for a patterned circle and a flower symbol asset from Canva. This is so that the patterns and the curves break up the solid color blocks on the rest of the site, and it makes the visual language more cohesive.
 
-## Future Development
-- Condense the code so it's more precise
-- Make it responsive
+## Potential Future Development
 - Changing colors of winning squares
-- Start the turn based on who lost the last round
+- Indicate whose turn it is
+- Start the turn of a round based on who lost the last round
+- Make it responsive
+- Dark mode toggle
+
+:shrimp: :tomato:
