@@ -6,6 +6,8 @@
     background-color: rgb(238, 233, 229);
 }
 
+
+
 h1 {
     margin: 50px auto 20px auto;
     font-family: 'Syne', sans-serif;
@@ -13,6 +15,7 @@ h1 {
     font-size: 2.5rem;
     color: #267e65;
     text-align: center;
+    transition:0.5s;
 }
 
 #counters {
@@ -78,6 +81,7 @@ h2 {
     font-weight: 700;
     font-size: 1.5rem;
     text-align: center;
+    transition:0.5s;
 }
 
 .player1 {
@@ -121,4 +125,18 @@ button {
 
 #startOverBtn {
     background-color: #c7a994;
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+        margin: 20px auto 0 auto;
+        transition:0.5s;
+    }
+
+    #announcement {
+        font-size: 1.25rem;
+        transition:0.5s;
+    }
+    
 }
