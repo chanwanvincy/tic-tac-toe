@@ -22,6 +22,7 @@ You can play the game at https://chanwanvincy.github.io/tic-tac-toe/
 - Scoreboard
 - New Game Button
 - Reset Button
+- Responsive font size
 
 ## Design
 ![Gilded Screen](https://cdn.shopify.com/s/files/1/0027/7141/9249/files/Japan-Color-Palette-7.jpg)
@@ -34,7 +35,6 @@ Instead of using the traditional noughts and exes, I opted for a patterned circl
 - Changing colors of winning squares
 - Indicate whose turn it is
 - Start the turn of a round based on who lost the last round
-- Make it responsive
 - Dark mode toggle
 
 :shrimp: :tomato:
